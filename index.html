@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function inputArray(a) {
+        let sizeArr;
+        do {
+            sizeArr = prompt(" Nhập kích thước mảng");
+        } while (sizeArr <= 0);
+        for (let i = 0; i < sizeArr; i++) {
+            a[i] = +prompt(" Nhập phần tử thứ  " + i + " : ");
+        }
+    }
+
+    function displayArr(a) {
+        for (let i = 0; i < a.length; i++) {
+            document.write(a[i] + " ");
+        }
+    }
+
+    function minValue(a) {
+        let min = a[0];
+        for (let i = 0; i < a.length; i++) {
+            if (min > a[i]) {
+                min = a[i];
+            }
+        }
+        return min;
+    }
+
+    let arr = new Array();
+    inputArray(arr);
+    displayArr(arr);
+    document.write("<br> Phần tử min trong mảng là :" + minValue(arr));
+
+</script>
+</body>
+</html>
